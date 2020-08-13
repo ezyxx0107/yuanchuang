@@ -1,0 +1,87 @@
+.header{
+  .top {
+    height: 83px; 
+    div {
+      display: inline-block;
+    }
+    .logo {
+      margin: 16px 210px 0 0;
+    }
+    .search {
+      margin: 23px 0 0 0;
+    }
+    .fr {
+      p {
+        display: inline-block;
+        line-height: 83px; 
+        margin: 0 20px;
+        cursor: pointer;
+      }
+    }
+  }
+  .nav {
+    background-color: @theme-color;
+    ul { 
+      display: flex;
+      justify-content: space-between;
+      li {  
+        color: #fff; 
+        margin-bottom: 5px;
+        cursor: pointer;
+        p {
+          line-height: 1.5; 
+          margin: 10px auto;
+          padding: 0 15px;
+        }
+      } 
+      li:not(:last-child) {
+        p{
+          // border-right: 1px #fff solid;
+        }
+      }
+      li.active {
+        background-color: #fff;
+        border-radius: 0 0 10px 10px;
+        color: @theme-color;
+        position: relative;
+        p {
+          position: relative;
+        }
+        p::after,p::before {
+          content: '';
+          display: inline-block;
+          height: 10px;
+          width: 10px;
+          background-color: @theme-color;
+          position: absolute;
+          z-index: 2;
+          top: -10px;
+        }
+        p::after{
+          border-radius: 0 100% 0 0; 
+          left: -10px;
+        }
+        p::before {
+          border-radius: 100% 0 0 0; 
+          right: -10px;
+        }
+      }
+      li.active::after,li.active::before {
+        content: '';
+        display: inline-block;
+        height: 10px;
+        width: 10px;
+        background-color: #fff;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+      }
+      li.active::after{
+        left: -9px;
+      }
+      li.active::before{
+        right: -9px;
+      }
+    }
+  }
+}

@@ -1,0 +1,104 @@
+// 全局可用的样式
+body,
+html {
+  min-height: 100%;
+  box-sizing: border-box;
+  line-height: 1.2; 
+  font-size: 14px;
+  background-color: #F7F7F7;
+  font-family: PingFangSC-Regular,'-apple-system',Simsun;
+}
+
+.inner {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+// 背景颜色
+.bg-white {
+  background-color: #fff;
+}
+
+// 图片100%撑开
+img {
+  width: 100%;
+  height: 100%;
+}
+
+// 标题
+.h3-title {
+ font-size: 24px;
+ line-height: 1.5; 
+ color: @theme-color;
+}
+
+// 字体颜色，字体大小
+.gray-text {
+  color: #989898;
+}
+.white-text {
+  color: #fff;
+} 
+
+// 字体大小
+.ft12 {
+  font-size: 12px;
+}
+
+// 间距
+.mb20 {
+  margin-bottom: 20px;
+}
+.padding20 {
+  padding: 20px;
+}
+
+// 圆角
+.br5 {
+  border-radius: 5px;
+}
+
+// 文字超一行显示省略号
+.text-overflow{
+	white-space: nowrap;
+ 	text-overflow:ellipsis;
+	overflow:hidden;
+}
+
+// 居中盒子
+.centerbox{
+    position: absolute;
+    text-align: center;
+    left:50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+// 弹性盒子
+.flexbox-space-betwwen {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+// 浮动，清除浮动
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.clearfix{
+  height:1%;
+  &:after{
+    content:" ";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden;
+    font-size: 0;
+  }
+}

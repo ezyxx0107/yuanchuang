@@ -1,0 +1,31 @@
+.search-input {
+  border:2px solid @theme-color;
+  border-radius: 20px;
+  display: inline-block;
+  overflow: hidden; 
+  height: 34px; 
+  width: auto; 
+  .input {
+    display: inline-block;
+    border: none; 
+    height: 32px;
+    line-height: 32px;
+    padding:0 20px;
+    font-size: 14px;
+    vertical-align: middle;
+  }
+  .search-icon{
+    cursor: pointer;
+    display: inline-block;
+    width: 40px;
+    height: 34px;
+    background-color: @theme-color;
+    vertical-align: middle; 
+    border-left: none;
+    border-radius: 0 10px 10px 0;
+    text-align: center; 
+    .search-svg {
+      margin-top: 5px;
+    }
+  }
+}
