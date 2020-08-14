@@ -1,23 +1,22 @@
 <!--
- * @Date: 2020-08-12 21:13:44
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-08-13 12:43:48
+ * @LastEditTime: 2020-08-14 17:01:27
  * @Description: 活动专区
 -->
 <template>
   <div class="activity mb20 padding20 br5 bg-white">
-    <h3 class="h3-title mb20">最新更新</h3>
+    <h3 class="h3-title mb20">活动专区</h3>
     <div class="list flexbox-space-betwwen">
       <div 
         v-for="item in activityList" 
         :key="item.id"  
         class="clearfix li">
         <p class="fl">
-          <span class="dot" :class="{active:item.count > 12}"></span>
+          <span class="dot" :class="{active:item.status}"></span>
           <span class="title text-overflow">{{item.title}}</span> 
         </p>
         <p class="fr">
-          <span></span>
+          <img v-if="!item.status" src="@/assets/icon/people.png" alt="" class="icon">
+          <img v-if="item.status" src="@/assets/icon/people-active.png" alt="" class="icon">
           <span class="ft12 gray-text">{{item.count}}人</span>
         </p>
       </div>
@@ -26,12 +25,13 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 
 interface ActivityValidator {
   id: number;
   title: string; // 主题名
   count: number; // 人数
+  status: boolean; // 活动状态：是否进行中
 }
 @Component({
   name: 'Activity',
@@ -42,21 +42,25 @@ export default class Activity extends Vue {
       id: 1,
       title: '第七十六次作业主题【游乐园】',
       count: 15,
+      status: true,
     },
     {
       id: 2,
       title: '第七十六次作业主题【游乐园】',
       count: 17,
+      status: true,
     },
     {
       id: 3,
       title: '第七十六次作业主题【游乐园】',
       count: 12,
+      status: false,
     },
     {
       id: 4,
       title: '第七十六次作业主题【游乐园】',
       count: 12,
+      status: false,
     },
   ];
 }
@@ -91,6 +95,12 @@ export default class Activity extends Vue {
     } 
     .title {
       width: 90%;
+    }
+    .icon {
+      width: 15px;
+      height: 15px;
+      vertical-align: middle;
+      margin: 0 2px 1px 0;
     }
   }
 }

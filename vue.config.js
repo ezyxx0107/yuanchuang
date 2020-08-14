@@ -1,11 +1,10 @@
 /*
- * @Date: 2020-08-11 17:41:26
- * @LastEditors: cola
- * @LastEditTime: 2020-08-12 16:12:02
+ * @LastEditTime: 2020-08-14 16:48:11
  * @Description: Vue全局配置
  */
 
 module.exports = { 
+  publicPath: "./",
   css: {
     loaderOptions: {
       // 全局样式变量

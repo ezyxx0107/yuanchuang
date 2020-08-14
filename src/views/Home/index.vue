@@ -1,7 +1,5 @@
 <!--
- * @Date: 2020-08-10 17:29:05
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-08-13 11:54:12
+ * @LastEditTime: 2020-08-14 14:26:14
  * @Description: Description
 -->
 <template>
@@ -19,6 +17,7 @@
       <Activity />
       <Forum />
       <AdvertisingImg class="mb20"/>
+      <Comment />
     </div> 
     <!-- Footer --> 
     <Footer />
@@ -37,6 +36,7 @@ import Recommend from './section/recommend.vue';
 import LatestUpdate from './section/LatestUpdate.vue';
 import Activity from './section/activity.vue';
 import Forum from './section/forum.vue';
+import Comment from './section/comment.vue';
 
 interface BannerValidator {
  readonly id: number;
@@ -55,6 +55,7 @@ interface BannerValidator {
     LatestUpdate,
     Activity,
     Forum,
+    Comment,
   },
 })
 export default class Home extends Vue {

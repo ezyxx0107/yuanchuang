@@ -1,5 +1,5 @@
 <!--
- * @LastEditTime: 2020-08-13 09:37:48
+ * @LastEditTime: 2020-08-13 16:59:10
  * @Description: 轮播
 -->
 
@@ -43,12 +43,6 @@ export default class Swipper extends Vue {
     this.destroyInterval();
   }
 
-  private destroyInterval() {
-    clearInterval(this.timer);
-    this.timer = null;
-    this.currentIndex = 0;
-  }
-
   @Watch('$route', { immediate: true })
   private onRouteChanged(val: string): void {
     if (this.timer) {
@@ -65,6 +59,12 @@ export default class Swipper extends Vue {
         this.currentIndex = 0;
       }
     }, this.time);
+  }
+
+  private destroyInterval() {
+    clearInterval(this.timer);
+    this.timer = null;
+    this.currentIndex = 0;
   }
 
   private hoverFn(index: number): void {

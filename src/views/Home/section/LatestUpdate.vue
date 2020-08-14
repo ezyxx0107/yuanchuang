@@ -1,7 +1,5 @@
 <!--
- * @Date: 2020-08-12 16:13:44
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-08-13 12:50:58
+ * @LastEditTime: 2020-08-14 14:26:03
  * @Description: 最新更新
 -->
 <template>
@@ -18,7 +16,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 interface BookValidator {
   id: number;
   title: string; // 书名
