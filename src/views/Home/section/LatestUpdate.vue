@@ -1,13 +1,14 @@
 <!--
- * @LastEditTime: 2020-08-14 14:26:03
+ * @LastEditTime: 2020-08-16 17:49:17
  * @Description: 最新更新
 -->
 <template>
   <div class="latest-update clearfix mb20 padding20 br5 bg-white">
     <h3 class="h3-title fl">最新更新</h3>
     <div class="fr">
-      <p v-for="(item) in latestUpdateLlist" :key="item.id">
-        <span class="title text-overflow">{{item.title}}</span>
+      <p v-for="item in latestUpdateLlist" :key="item.id" class="cursor-pointer"
+        @click="goToPage(item)">
+        <span class="title book-title text-overflow">{{item.title}}</span>
         <span class="chapter text-overflow ft12 gray-text">{{`更新第${item.chapter}章：${item.chapterTitle}`}}</span>
         <span class="time text-overflow ft12 gray-text">{{item.updateTime}}</span> 
       </p>
@@ -59,6 +60,11 @@ export default class LatestUpdate extends Vue {
       updateTime: '16:34',
     },
   ];
+
+  private goToPage(item: BookValidator): void {
+    // 该章节详情页
+    console.log(item);
+  }
 }
 </script>
 
@@ -72,7 +78,6 @@ export default class LatestUpdate extends Vue {
     width: 80%;
     margin: 5px 0;
     p {
-      cursor: pointer;
       display: inline-block;
       width: 50%;
       line-height: 20px;

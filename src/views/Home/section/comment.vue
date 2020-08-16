@@ -1,5 +1,5 @@
 <!--
- * @LastEditTime: 2020-08-13 17:29:58
+ * @LastEditTime: 2020-08-16 17:47:48
  * @Description: Description
 -->
 <template>
@@ -14,9 +14,10 @@
           <span class="user">{{ item.user }}</span>
           <span class="lever white-text">{{ item.lever }}</span>
         </p>
-        <p class="gray-text">《{{ item.title }}》</p>
+        <p class="gray-text cursor-pointer" @click="goToPage('book', item)">《{{ item.title }}》</p>
       </div>
-      <div class="content text-more-overflow mb10">{{ item.comment }}</div>
+      <p class="content text-more-overflow mb10 cursor-pointer"
+         @click="goToPage('comment', item)">{{ item.comment }}</p>
       <div class="footer flexbox-space-betwwen gray-text  mb10">
         <p>{{ `来自 第${item.chapter}章 ${item.chapterTitle}` }}</p>
         <p>{{ item.time }}</p>
@@ -64,6 +65,11 @@ export default class Comment extends Vue {
       time: '2020-08-09',
     },
   ];
+
+  private goToPage(type: string, item: CommentValidator): void {
+    console.log(type, item);
+  }
+
 }
 
 </script>

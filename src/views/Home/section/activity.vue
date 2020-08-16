@@ -1,5 +1,5 @@
 <!--
- * @LastEditTime: 2020-08-14 17:01:27
+ * @LastEditTime: 2020-08-16 17:47:21
  * @Description: 活动专区
 -->
 <template>
@@ -9,10 +9,11 @@
       <div 
         v-for="item in activityList" 
         :key="item.id"  
-        class="clearfix li">
+        class="clearfix li"
+        @click="goToPage(item)">
         <p class="fl">
           <span class="dot" :class="{active:item.status}"></span>
-          <span class="title text-overflow">{{item.title}}</span> 
+          <span class="title book-title text-overflow">{{item.title}}</span> 
         </p>
         <p class="fr">
           <img v-if="!item.status" src="@/assets/icon/people.png" alt="" class="icon">
@@ -63,6 +64,10 @@ export default class Activity extends Vue {
       status: false,
     },
   ];
+
+  private goToPage(item: ActivityValidator): void {
+    // 帖子详情
+  }
 }
 </script>
 

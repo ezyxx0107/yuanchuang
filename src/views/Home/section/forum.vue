@@ -1,12 +1,12 @@
 <!--
- * @LastEditTime: 2020-08-14 15:51:11
+ * @LastEditTime: 2020-08-16 17:29:12
  * @Description: 论坛社区
 -->
 <template>
   <div class="forum mb20 padding20 br5 bg-white">
     <h3 class="h3-title mb20">论坛社区</h3>
     <div class="flexbox-space-betwwen">
-      <div class="padding20 br5 box">
+      <div class="padding20 br5 box cursor-pointer">
         <div
           class="swiper">
           <h4>{{ currentItem.category }}</h4>
@@ -15,7 +15,7 @@
           <p class="author">—— <span class="theme-color-text">{{ currentItem.author }}</span></p>
         </div>
       </div>
-      <div class="padding20 br5 box">
+      <div class="padding20 br5 box cursor-pointer">
         <h4>{{ forum.category }}</h4>
         <p class="gray-text ft12">{{ forum.signature }}</p>
         <p class="content text-more-overflow">{{ forum.content }}</p>
@@ -114,7 +114,7 @@ export default class Forum extends Vue {
 
 <style lang="less" scoped>
 .forum {
-  .box {
+  .box { 
     display: inline-block;
     border: 1px #F8E9EA solid;
     width: 45%;
@@ -137,6 +137,9 @@ export default class Forum extends Vue {
       margin-right: 10px;
       color: rgba(0, 0, 0, 0.8)
     } 
+  }
+  .box:hover {
+    border-color: @theme-color;
   }
 }
 </style>

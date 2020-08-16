@@ -1,19 +1,24 @@
 <!--
- * @LastEditTime: 2020-08-13 16:59:10
+ * @LastEditTime: 2020-08-16 17:36:39
  * @Description: 轮播
 -->
 
 <template>
   <div class="swiper">
-    <div class="image">
+    <div class="image cursor-pointer"
+      @mouseenter="hoverFn(currentIndex)"
+      @mouseleave="swiper(currentIndex)"
+      @click="goToPage(currentIndex)">
       <img :src="swiperList?swiperList[currentIndex].src:''" alt="">
     </div>
     <ul>
       <li v-for="(item, index) in swiperList" 
         :key="index" 
         :class="{active:index === currentIndex}"
+        class="cursor-pointer"
         @mouseenter="hoverFn(index)"
-        @mouseleave="swiper(index)">
+        @mouseleave="swiper(index)"
+        @click="goToPage(currentIndex)">
         {{ item.label }}
       </li>
     </ul>
@@ -73,6 +78,10 @@ export default class Swipper extends Vue {
     this.currentIndex = index;
   }
 
+  private goToPage(index: number): void {
+    // 跳转到对应的页面
+  }
+
 }
 </script>
 
@@ -97,8 +106,7 @@ export default class Swipper extends Vue {
       width: 20%;
       text-align: center;
       color: #fff;
-      box-sizing: border-box;
-      cursor: pointer;
+      box-sizing: border-box; 
     }
     li:not(:last-child) {
       border-right: 1px #fff solid;

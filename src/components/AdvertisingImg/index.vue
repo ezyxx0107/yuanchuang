@@ -1,5 +1,5 @@
 <!--
- * @LastEditTime: 2020-08-13 09:37:30
+ * @LastEditTime: 2020-08-16 17:47:39
  * @Description: 广告位图片
  * @props:
     src 图片路径，必传 
@@ -7,7 +7,8 @@
 -->
 
 <template>
-  <div class="advertising-image" :style="{height: `${height}px`}">
+  <div class="advertising-image cursor-pointer" :style="{height: `${height}px`}"
+    @click="goToPage()">
     <img :src="src" alt="">
     <span class="advertising-label">广告</span>
   </div>
@@ -31,6 +32,10 @@ export default class AdvertisingImage extends Vue {
    * @return {type} void
    */
   @Prop({ default: '85'}) private height?: number;
+
+  private goToPage(): void {
+    // 广告页
+  }
 }
 </script>
 

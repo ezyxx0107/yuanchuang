@@ -1,5 +1,5 @@
 <!--
- * @LastEditTime: 2020-08-14 16:56:47
+ * @LastEditTime: 2020-08-16 17:51:19
  * @Description: 编辑推荐
 -->
 <template>
@@ -12,10 +12,10 @@
           <p class="hot white-text">
             <img src="@/assets/icon/hot.png" alt="" class="hot-icon">
             <span>{{ mainBook.hot }}</span>
-          </p>
+          </p> 
         </div>
         <div class="book-info">
-          <p class="title mb10">{{ mainBook.title }}</p>
+          <p class="title book-title mb10" @click="goToPage(mainBook)">{{ mainBook.title }}</p>
           <p class="author mb10">
             <span class="circle"><span class="dot"></span></span>
             <span class="name">{{ mainBook.author }}</span>
@@ -32,7 +32,7 @@
             <img :src="item.cover" alt="">
           </div>
           <div class="book-info">
-            <p class="title mb5">{{ item.title }}</p>
+            <p class="title book-title mb5" @click="goToPage(item)">{{ item.title }}</p>
             <p class="author mb5">{{ item.author }}</p>
             <p class="category ft12 mb5">{{ item.category }}</p>
             <p class="content text-more-overflow ft12 mb10">{{ item.content }}</p>
@@ -117,6 +117,11 @@ export default class Recommended extends Vue {
       chapter: 777,
     },
   ];
+
+  private goToPage(item: BookBookValidator): void {
+    // 小说主页
+    console.log(item);
+  }
 }
 </script>
 
@@ -202,28 +207,28 @@ export default class Recommended extends Vue {
         height: 150px;
       }
       .book-info {
-        padding: 5px 0;
-        color: #989898;
+        padding: 10px 0 0 0;
         width: 62%;
-        .title {
-          font-size: 16px;
-          color: #333;
+        .title { 
+          font-size: 16px; 
         }
         .author {
           font-size: 14px;
+          color: #989898;
         }
         .category {
           border: 1px #A3A3A3 solid;
           border-radius: 5px;
           padding: 2px 5px;
           display: inline-block;
+          color: #989898;
         }
         .content {
           -webkit-line-clamp: 4;
           color: #666;
         }
         .chapter {
-          color: #CBCBCB;
+          color: #CBCBCB; 
         }
       } 
     }

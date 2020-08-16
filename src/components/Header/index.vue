@@ -1,5 +1,5 @@
 <!--
- * @LastEditTime: 2020-08-14 17:07:03
+ * @LastEditTime: 2020-08-16 17:27:36
  * @Description: 公共头部，包含logo，查询，登陆，注册，导航 
 -->
 <template>
@@ -10,13 +10,13 @@
       </div>
       <SearchInput inputWidth="230" class="fl search"/>
       <div class="fr">
-        <p class="sigin-up">登陆</p>
-        <p class="sigin-in">注册</p>
+        <p class="sigin-up cursor-pointer">登陆</p>
+        <p class="sigin-in cursor-pointer">注册</p>
       </div>
     </div>
     <div class="nav">
       <ul class="inner">
-        <li v-for="(item, index) in navigations" :key="item.key" :class="{active:index===0}">
+        <li v-for="(item, index) in navigations" :key="item.key" :class="{active:index===0}" class=" cursor-pointer">
           <p>
             <img v-if="item.key === 'mobileWeb'" src="@/assets/icon/phone.png" alt="" class="icon">
             <span>{{ item.name }}</span>
@@ -33,7 +33,7 @@ import SearchInput from '@/components/SearchInput/index.vue';
 interface NavigationValidator {
   readonly name: string;
   readonly key: string;
-  readonly path: string; 
+  readonly path: string;
 }
 @Component({
   name: 'Header',
